@@ -26,6 +26,7 @@ public class caso2 extends JFrame implements ActionListener {
 	private JButton btnNewButton_1;
 	private JButton btnNewButton_2;
 	private JTextArea txtS;
+	private JButton btnNewButton_3;
 
 	/**
 	 * Launch the application.
@@ -98,9 +99,18 @@ public class caso2 extends JFrame implements ActionListener {
 				btnNewButton_2.setBounds(217, 45, 89, 23);
 				contentPane_1.add(btnNewButton_2);
 			}
+			{
+				btnNewButton_3 = new JButton("Borrar");
+				btnNewButton_3.addActionListener(this);
+				btnNewButton_3.setBounds(118, 40, 89, 23);
+				contentPane_1.add(btnNewButton_3);
+			}
 		}
 	}
 	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnNewButton_3) {
+			do_btnNewButton_3_actionPerformed(e);
+		}
 		if (e.getSource() == btnNewButton_1) {
 			do_btnNewButton_1_actionPerformed(e);
 		}
@@ -127,6 +137,13 @@ public class caso2 extends JFrame implements ActionListener {
 		int min= Integer.parseInt(txt1.getText());
 		convertir c =new convertir(min);
 		txtS.append("La convercion es: " +c.Convertir1(min));
+		
+	}
+	protected void do_btnNewButton_3_actionPerformed(ActionEvent e) {
+		
+		txt1.setText("");
+		txtS.setText("");
+		txt1.requestFocus();
 		
 	}
 }
